@@ -81,13 +81,8 @@ export const Navbar = () => {
                     <Link href="/signin" className="w-full px-6 py-2 mt-3 text-center text-white bg-red-600 rounded-md lg:ml-5">         
                         Sign In
                     </Link>
-                  ))}
-                  <Link
-                    href="/"
-                    className="w-full px-6 py-2 mt-3 text-center text-white bg-red-600 rounded-md lg:ml-5"
-                  >
-                    Get Started
-                  </Link>
+                  
+
                 </>
               </Disclosure.Panel>
             </>

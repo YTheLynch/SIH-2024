@@ -14,8 +14,6 @@
     "tailwindcss",
     "free"
   ],
-  "author": "Surjith S M",
-  "license": "ISC",
   "dependencies": {
     "@headlessui/react": "^2.0.3",
     "@heroicons/react": "^2.1.3",

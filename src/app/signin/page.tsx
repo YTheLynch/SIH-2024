@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
 	const router = useRouter();
-
 	const [user, setUser] = React.useState({
 		email: '',
 		password: '',
@@ -17,17 +16,17 @@ export default function LoginPage() {
 
 	const [loading, setLoading] = React.useState(false);
 
-	const onLogin = async () => {
-		try {
-			setLoading(true);
-			const response = await axios.post('api/users/login', user);
-			console.log('Login successful', response.data);
-			router.push('/profile');
-		} catch (error: any) {
-			console.log('Login failed', error.message);
-		} finally {
-			setLoading(false);
-		}
+	const onLogin = () => {
+		router.push('/home');
+		// try {
+			// setLoading(true);
+			// const response = await axios.post('api/users/login', user);
+			// console.log('Login successful', response.data);
+		// } catch (error: any) {
+		// 	console.log('Login failed', error.message);
+		// } finally {
+		// 	setLoading(false);
+		// }
 	};
 
 	useEffect(() => {
@@ -70,7 +69,7 @@ export default function LoginPage() {
 				Login
 			</button>
 
-			<Link href="/sign-up">
+			<Link href="/signup">
 				<p className="mt-10">
 					Do not have an account yet?
 					<span className="font-bold text-red-700 ml-2 cursor-pointer underline">
@@ -81,7 +80,7 @@ export default function LoginPage() {
 
 			<Link href="/">
 				<p className="mt-8 opacity-50">
-					
+					Go Back
 				</p>
 			</Link>
 		</div>

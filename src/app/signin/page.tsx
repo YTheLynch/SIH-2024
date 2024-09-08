@@ -4,7 +4,6 @@ import Link from 'next/link';
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
-
 export default function LoginPage() {
 	const router = useRouter();
 	const [user, setUser] = React.useState({
@@ -12,21 +11,11 @@ export default function LoginPage() {
 		password: '',
 	});
 
-	const [buttonDisabled, setButtonDisabled] = React.useState(false);
-
+	const [buttonDisabled, setButtonDisabled] = React.useState(true);
 	const [loading, setLoading] = React.useState(false);
 
 	const onLogin = () => {
 		router.push('/home');
-		// try {
-			// setLoading(true);
-			// const response = await axios.post('api/users/login', user);
-			// console.log('Login successful', response.data);
-		// } catch (error: any) {
-		// 	console.log('Login failed', error.message);
-		// } finally {
-		// 	setLoading(false);
-		// }
 	};
 
 	useEffect(() => {
@@ -37,51 +26,59 @@ export default function LoginPage() {
 		}
 	}, [user]);
 
-	console.log(user);
-
 	return (
-		<div className="flex flex-col items-center justify-center min-h-screen py-2">
-			<h1 className="py-10 mb-10 text-5xl">
-				{loading ? "We're logging you in..." : 'Account Login'}
-			</h1>
+		<div className="flex flex-col items-center justify-center min-h-screen bg-white">
+			{/* Form Wrapper */}
+			<div className="bg-red-600 p-8 rounded-s-md shadow-md w-full max-w-md">
+				<h1 className="text-4xl font-bold text-center text-white mb-6">
+					{loading ? "We're logging you in..." : 'Sign In'}
+				</h1>
 
-			<input
-				className="w-[350px] text-red-800 p-2 border border-red-300 rounded-lg mb-4 focus:outline-none focus:border-red-600"
-				id="email"
-				type="text"
-				value={user.email}
-				onChange={(e) => setUser({ ...user, email: e.target.value })}
-				placeholder="Your Email..."
-			/>
+				{/* Email Input */}
+				<input
+					className="w-full p-3 mb-4 text-white border border-red-300 rounded-md focus:outline-none focus:border-red-500"
+					id="email"
+					type="email"
+					value={user.email}
+					onChange={(e) => setUser({ ...user, email: e.target.value })}
+					placeholder="Your Email..."
+				/>
 
-			<input
-				className="w-[350px] text-red-800 p-2 border border-red-300 rounded-lg mb-4 focus:outline-none focus:border-red-600"
-				id="password"
-				type="password"
-				value={user.password}
-				onChange={(e) => setUser({ ...user, password: e.target.value })}
-				placeholder="Your Password..."
-			/>
+				{/* Password Input */}
+				<input
+					className="w-full p-3 mb-4 text-red-800 border border-red-300 rounded-lg focus:outline-none focus:border-red-500"
+					id="password"
+					type="password"
+					value={user.password}
+					onChange={(e) => setUser({ ...user, password: e.target.value })}
+					placeholder="Your Password..."
+				/>
 
-			<button
-				onClick={onLogin}
-				className="p-2 border border-red-300 rounded-lg focus:outline-none focus:border-red-600 uppercase px-40 py-3 mt-10 font-bold">
-				Login
-			</button>
+				{/* Login Button */}
+				<button
+					onClick={onLogin}
+					className={`w-full p-3 text-white font-bold rounded-lg transition-colors ${
+						buttonDisabled ? 'bg-red-300 cursor-not-allowed' : 'bg-red-600 hover:bg-red-700'
+					}`}
+					disabled={buttonDisabled}
+				>
+					{loading ? 'Logging in...' : 'Login'}
+				</button>
 
-			<Link href="/signup">
-				<p className="mt-10">
-					Do not have an account yet?
-					<span className="font-bold text-red-700 ml-2 cursor-pointer underline">
-						Register your free account now
-					</span>
-				</p>
-			</Link>
+				{/* Register Link */}
+				<div className="mt-6 text-center">
+					<Link href="/signup">
+						<p className="text-white">
+							Don't have an account?{' '}
+							<span className="text-red-600 font-semibold hover:underline">Register</span>
+						</p>
+					</Link>
+				</div>
+			</div>
 
+			{/* Go Back Link */}
 			<Link href="/">
-				<p className="mt-8 opacity-50">
-					Go Back
-				</p>
+				<p className="mt-8 text-red-600">Go Back</p>
 			</Link>
 		</div>
 	);

@@ -32,7 +32,7 @@ export const Navbar = () => {
           </span>
         </Link>
 
-        {/* get started  */}
+        
         <div className="gap-3 nav__item mr-2 lg:flex ml-auto lg:ml-0 lg:order-2">
             <ThemeChanger />
             <div className="hidden mr-3 lg:flex nav__item">
@@ -75,8 +75,8 @@ export const Navbar = () => {
                           {item}
                       </Link>
                     ))}
-                    <Link href="/" className="w-full px-6 py-2 mt-3 text-center text-white bg-red-600 rounded-md lg:ml-5">         
-                        Get Started
+                    <Link href="/signin" className="w-full px-6 py-2 mt-3 text-center text-white bg-red-600 rounded-md lg:ml-5">         
+                        Sign In
                     </Link>
                   </>
                 </Disclosure.Panel>

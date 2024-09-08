@@ -4,16 +4,12 @@ import ThemeChanger from "./DarkSwitch";
 import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
 import { useState } from "react";
+import { useRouter } from 'next/navigation';
+
 
 export const Navbar = () => {
   const navigation = ["Product", "Features", "Pricing", "Company"];
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // Handle search query logic here
-    console.log("Search query:", searchQuery);
-  };
+  const router = useRouter();
 
   return (
     <div className="w-full">
@@ -106,24 +102,17 @@ export const Navbar = () => {
         </div>
       </nav>
 
-      {/* Search Bar below navigation */}
-      <div className="container mx-auto my-8">
-        <form onSubmit={handleSearch} className="flex justify-center">
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full max-w-3xl px-4 py-3 text-gray-800 bg-white border border-gray-300 rounded-full focus:outline-none focus:ring focus:ring-red-500 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600"
-            placeholder="Search for Schemes, and more..."
-          />
-          <button
-            type="submit"
-            className="ml-4 px-6 py-4 text-white bg-red-600 rounded-full"
-          >
-            Search
-          </button>
-        </form>
+      <div className = "flex justify-center">
+        <div className = "border border-solid border-red-500 px-5 py-2 rounded-lg">
+          <div onClick={() => router.push('/search')}>
+            <p>Enter scheme name to search...</p>
+          </div>
+          
+        </div>
       </div>
+        
+
+      
     </div>
   );
 };

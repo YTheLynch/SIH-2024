@@ -1,8 +1,7 @@
 {
-  "name": "SevaMitra AI",
+  "name": "InfoSaathi",
   "version": "1.0.0",
-  "description": "SevaMitra AI Landing Page",
-  "private": true,
+  "description": "InfoSaathi Landing Page",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

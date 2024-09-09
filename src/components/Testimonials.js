@@ -13,7 +13,7 @@ export const Testimonials = () => {
         <div className="lg:col-span-2 xl:col-auto">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark::bg-trueGray-800">
             <p className="text-2xl leading-normal ">
-              Your platform streamlined our <Mark> postal operations</Mark>
+              Your platform streamlined our <Mark>postal operations</Mark>
               significantly improving efficiency and customer satisfaction that
               hits some of your benefits from one of your popular customer.
             </p>
@@ -29,7 +29,7 @@ export const Testimonials = () => {
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark::bg-trueGray-800">
             <p className="text-2xl leading-normal ">
               Utilizing this service has transformed how we handle{" "}
-              <Mark> parcel tracking </Mark>, enhancing both speed and accuracy
+              <Mark>parcel tracking</Mark>, enhancing both speed and accuracy
             </p>
 
             <Avatar
@@ -42,7 +42,7 @@ export const Testimonials = () => {
         <div className="">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark::bg-trueGray-800">
             <p className="text-2xl leading-normal ">
-              With this solution, we’ve seen <Mark> improvements </Mark>in user
+              With this solution, we’ve seen <Mark> improvements</Mark> in user
               engagement and streamlined our support processes.
             </p>
 

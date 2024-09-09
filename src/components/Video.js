@@ -1,15 +1,11 @@
-"use client";
-import { useState } from "react";
-import { Container } from "@/components/Container";
+"use client"
+import { useState } from "react"
+import { Container } from "@/components/Container"
 
-interface VideoProps {
-  videoId: string;
-}
+export function Video({ videoId }) {
+  const [playVideo, setPlayVideo] = useState(false)
 
-export function Video({ videoId }: Readonly<VideoProps>) {
-  const [playVideo, setPlayVideo] = useState(false);
-
-  if (!videoId) return null;
+  if (!videoId) return null
 
   return (
     <Container>
@@ -44,5 +40,5 @@ export function Video({ videoId }: Readonly<VideoProps>) {
         )}
       </div>
     </Container>
-  );
+  )
 }

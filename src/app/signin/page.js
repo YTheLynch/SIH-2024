@@ -36,7 +36,7 @@ export default function LoginPage() {
 
         {/* Email Input */}
         <input
-          className="w-full p-3 mb-4 bg-white text-white border border-red-300 rounded-md focus:outline-none focus:border-red-500"
+          className="w-full p-3 mb-4 bg-white text-red-800 border border-red-300 rounded-md focus:outline-none focus:border-red-500"
           id="email"
           type="email"
           value={user.email}

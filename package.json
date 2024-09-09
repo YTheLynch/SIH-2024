@@ -1,6 +1,7 @@
 {
-  "name": "my-app2",
-  "version": "0.1.0",
+  "name": "SevaMitra AI",
+  "version": "1.0.0",
+  "description": "SevaMitra AI Landing Page",
   "private": true,
   "scripts": {
     "dev": "next dev",

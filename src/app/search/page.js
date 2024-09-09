@@ -1,22 +1,21 @@
+"use client"
 import React from "react"
 import SearchItem from "@/components/SearchItem"
 import { schemes } from "@/store/schemes"
+import { Navbar } from "@/components/Navbar"
 
 const page = () => {
-  return <div className="pl-64 pr-32">
-    <SearchItem name = "Yuganshu" organization = "['Nabard']" className = "mb-5"/>
-    <SearchItem name = "Yuganshu" organization = "['Nabard']" className = "mb-5"/>
-    <SearchItem name = "Yuganshu" organization = "['Nabard']" className = "mb-5"/>
-    <SearchItem name = "Yuganshu" organization = "['Nabard']" className = "mb-5"/>
-    <SearchItem name = "Yuganshu" organization = "['Nabard']" className = "mb-5"/>
-    <SearchItem name = "Yuganshu" organization = "['Nabard']" className = "mb-5"/>
-    <SearchItem name = "Yuganshu" organization = "['Nabard']" className = "mb-5"/>
-    <SearchItem name = "Yuganshu" organization = "['Nabard']" className = "mb-5"/>
-    <SearchItem className = "mb-5"/>
-    <SearchItem className = "mb-5"/>
+  return (
+    <>
+      <Navbar />
+      <div id="box" className="ml-20 pr-20 min-h-[70vh]">
+        {schemes.map((scheme, index) => (
+          <SearchItem key={index} name={scheme.name} organization={scheme.organization.join(", ")} className="m-6" />
+        ))}
+      </div>
+    </>
+  );
+};
 
+export default page;
 
-  </div>
-}
-
-export default page

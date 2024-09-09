@@ -28,8 +28,6 @@ export default function Home() {
         <Video videoId="a6KxA-kxAQ4" />
 
         <SectionTitle preTitle="Testimonials" title="Real Stories, Real Trust">
-          Testimonials is a great way to increase the brand trust and awareness.
-          Use this section to highlight your popular customers.
         </SectionTitle>
 
         <Testimonials />

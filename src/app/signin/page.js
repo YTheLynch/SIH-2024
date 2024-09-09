@@ -36,7 +36,7 @@ export default function LoginPage() {
 
         {/* Email Input */}
         <input
-          className="w-full p-3 mb-4 bg-white text-red-800 border border-red-300 rounded-md focus:outline-none focus:border-red-500"
+          className="w-full p-3 mb-4 bg-white text-black border border-red-300 rounded-md focus:outline-none focus:border-red-500"
           id="email"
           type="email"
           value={user.email}
@@ -46,7 +46,7 @@ export default function LoginPage() {
 
         {/* Password Input */}
         <input
-          className="w-full p-3 mb-4 bg-white text-red-800 border border-red-300 rounded-lg focus:outline-none focus:border-red-500"
+          className="w-full p-3 mb-4 bg-white text-black border border-red-300 rounded-lg focus:outline-none focus:border-red-500"
           id="password"
           type="password"
           value={user.password}
@@ -82,7 +82,7 @@ export default function LoginPage() {
 
       {/* Go Back Link */}
       <Link href="/">
-        <p className="mt-8 rounded-full text-red-600">Go Back</p>
+        <p className="mt-8 rounded-full text-xl text-red-700">Go Back</p>
       </Link>
     </div>
   )

@@ -6,7 +6,7 @@ import { Disclosure } from "@headlessui/react"
 import { useRouter } from "next/navigation"
 
 export const Navbar = () => {
-  const navigation = ["Product", "Features", "Pricing", "Company"]
+  const navigation = ["Product", "Features", "Rewards", "Company"]
   const router = useRouter()
 
   return (

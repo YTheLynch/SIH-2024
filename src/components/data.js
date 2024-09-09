@@ -33,23 +33,23 @@ const benefitOne = {
 };
 
 const benefitTwo = {
-  title: "Offer more benefits here",
-  desc: "You can use this same layout with a flip image to highlight your rest of the benefits of your product. It can also contain an image or Illustration as above section along with some bullet points.",
+  title: " Some More benefits",
+  desc: "",
   image: "/img/benefit-two.png",
   bullets: [
     {
-      title: "Mobile Responsive Template",
-      desc: "Nextly is designed as a mobile first responsive template.",
+      title: "Reward Engagement",
+      desc: "InfoSaathi motivates users by offering rewards for continuous participation and engagement in financial and insurance services, fostering long-term loyalty and satisfaction.",
       icon: <DevicePhoneMobileIcon />,
     },
     {
-      title: "Powered by Next.js & TailwindCSS",
-      desc: "This template is powered by latest technologies and tools.",
+      title: "Personalized Mentorship",
+      desc: "InfoSaathi provides one-on-one mentorship, helping users navigate complex schemes, improve financial literacy, and achieve personal growth through tailored guidance.",
       icon: <AdjustmentsHorizontalIcon />,
     },
     {
-      title: "dark & Light Mode",
-      desc: "Nextly comes with a zero-config light & dark mode. ",
+      title: "Community Support and Growth",
+      desc: "InfoSaathi connects users with self-help groups and like-minded individuals, creating a supportive community that promotes shared learning, resource sharing, and collective progress.",
       icon: <SunIcon />,
     },
   ],

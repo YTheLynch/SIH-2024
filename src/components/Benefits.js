@@ -17,7 +17,7 @@ export const Benefits = props => {
             width={721}
             height={721}
             alt="Benefits"
-            className={"object-cover rounded-3xl px-6 my-10 top-5"}
+            className={"object-cover rounded-full px-6 my-10 top-15"}
             placeholder="blur"
             blurDataURL={data.image}
           />

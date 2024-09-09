@@ -89,10 +89,10 @@ export const Navbar = () => {
                       Rewards
                     </Link>
                     <Link
-                      href="/"
+                      href="/whatsapp"
                       className="w-full px-4 py-2 -ml-4 text-red-500 rounded-md dark::text-red-300 hover:text-red-500 focus:text-red-500 focus:bg-indigo-100 dark::focus:bg-red-800 focus:outline-none"
                     >
-                      Company
+                      Whatsapp Assistance
                     </Link>
 
                   <Link
@@ -140,10 +140,10 @@ export const Navbar = () => {
 
               <li className="mr-3 nav__item">
                 <Link
-                  href="/"
+                  href="/whatsapp"
                   className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark::text-gray-200 hover:text-red-500 focus:text-red-500 focus:bg-red-100 focus:outline-none dark::focus:bg-gray-800"
                 >
-                  Company
+                  Whatsapp Assistance
                 </Link>
               </li>
             

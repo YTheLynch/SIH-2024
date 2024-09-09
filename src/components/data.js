@@ -33,7 +33,7 @@ const benefitOne = {
 };
 
 const benefitTwo = {
-  title: " Some More benefits",
+  title: "Additional benefits",
   desc: "",
   image: "/img/benefit-two.png",
   bullets: [

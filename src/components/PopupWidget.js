@@ -1,12 +1,12 @@
-"use client";
-import React, { useState } from "react";
-import { useForm, useWatch } from "react-hook-form";
+"use client"
+import React, { useState } from "react"
+import { useForm, useWatch } from "react-hook-form"
 import {
   Disclosure,
   Transition,
   DisclosurePanel,
-  DisclosureButton,
-} from "@headlessui/react";
+  DisclosureButton
+} from "@headlessui/react"
 
 export function PopupWidget() {
   const {
@@ -14,44 +14,44 @@ export function PopupWidget() {
     handleSubmit,
     reset,
     control,
-    formState: { errors, isSubmitSuccessful, isSubmitting },
+    formState: { errors, isSubmitSuccessful, isSubmitting }
   } = useForm({
-    mode: "onTouched",
-  });
+    mode: "onTouched"
+  })
 
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [Message, setMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false)
+  const [Message, setMessage] = useState("")
 
-  const userName = useWatch({ control, name: "name", defaultValue: "Someone" });
+  const userName = useWatch({ control, name: "name", defaultValue: "Someone" })
 
-  const onSubmit = async (data: any, e: any) => {
-    console.log(data);
+  const onSubmit = async (data, e) => {
+    console.log(data)
     await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
+        Accept: "application/json"
       },
-      body: JSON.stringify(data, null, 2),
+      body: JSON.stringify(data, null, 2)
     })
-      .then(async (response) => {
-        let json = await response.json();
+      .then(async response => {
+        let json = await response.json()
         if (json.success) {
-          setIsSuccess(true);
-          setMessage(json.message);
-          e.target.reset();
-          reset();
+          setIsSuccess(true)
+          setMessage(json.message)
+          e.target.reset()
+          reset()
         } else {
-          setIsSuccess(false);
-          setMessage(json.message);
+          setIsSuccess(false)
+          setMessage(json.message)
         }
       })
-      .catch((error) => {
-        setIsSuccess(false);
-        setMessage("Client Error. Please check the console.log for more info");
-        console.log(error);
-      });
-  };
+      .catch(error => {
+        setIsSuccess(false)
+        setMessage("Client Error. Please check the console.log for more info")
+        console.log(error)
+      })
+  }
 
   return (
     <div>
@@ -117,7 +117,7 @@ export function PopupWidget() {
               leaveTo="opacity-0 translate-y-5"
               as="div"
             >
-              <DisclosurePanel className=" flex flex-col  overflow-hidden left-0 h-full w-full sm:w-[350px] min-h-[250px] sm:h-[600px] border border-gray-300 dark:border-gray-800 bg-white shadow-2xl rounded-md sm:max-h-[calc(100vh-120px)]">
+              <DisclosurePanel className=" flex flex-col  overflow-hidden left-0 h-full w-full sm:w-[350px] min-h-[250px] sm:h-[600px] border border-gray-300 dark::border-gray-800 bg-white shadow-2xl rounded-md sm:max-h-[calc(100vh-120px)]">
                 <div className="flex flex-col items-center justify-center h-32 p-5 bg-red-600">
                   <h3 className="text-lg text-white">How can we help?</h3>
                   <p className="text-white opacity-50">
@@ -152,7 +152,7 @@ export function PopupWidget() {
                       <div className="mb-4">
                         <label
                           htmlFor="full_name"
-                          className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+                          className="block mb-2 text-sm text-gray-600 dark::text-gray-400"
                         >
                           Full Name
                         </label>
@@ -162,7 +162,7 @@ export function PopupWidget() {
                           placeholder="John Doe"
                           {...register("name", {
                             required: "Full name is required",
-                            maxLength: 80,
+                            maxLength: 80
                           })}
                           className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
                             errors.name
@@ -172,7 +172,7 @@ export function PopupWidget() {
                         />
                         {errors.name && (
                           <div className="mt-1 text-sm text-red-400 invalid-feedback">
-                            {errors.name.message as string}
+                            {errors.name.message}
                           </div>
                         )}
                       </div>
@@ -180,7 +180,7 @@ export function PopupWidget() {
                       <div className="mb-4">
                         <label
                           htmlFor="email"
-                          className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+                          className="block mb-2 text-sm text-gray-600 dark::text-gray-400"
                         >
                           Email Address
                         </label>
@@ -191,8 +191,8 @@ export function PopupWidget() {
                             required: "Enter your email",
                             pattern: {
                               value: /^\S+@\S+$/i,
-                              message: "Please enter a valid email",
-                            },
+                              message: "Please enter a valid email"
+                            }
                           })}
                           placeholder="you@company.com"
                           className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
@@ -204,7 +204,7 @@ export function PopupWidget() {
 
                         {errors.email && (
                           <div className="mt-1 text-sm text-red-400 invalid-feedback">
-                            {errors.email.message as string}
+                            {errors.email.message}
                           </div>
                         )}
                       </div>
@@ -212,7 +212,7 @@ export function PopupWidget() {
                       <div className="mb-4">
                         <label
                           htmlFor="message"
-                          className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+                          className="block mb-2 text-sm text-gray-600 dark::text-gray-400"
                         >
                           Your Message
                         </label>
@@ -221,7 +221,7 @@ export function PopupWidget() {
                           rows={4}
                           id="message"
                           {...register("message", {
-                            required: "Enter your Message",
+                            required: "Enter your Message"
                           })}
                           placeholder="Your Message"
                           className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md h-28 focus:outline-none focus:ring   ${
@@ -233,7 +233,7 @@ export function PopupWidget() {
                         ></textarea>
                         {errors.message && (
                           <div className="mt-1 text-sm text-red-400 invalid-feedback">
-                            {errors.message.message as string}
+                            {errors.message.message}
                           </div>
                         )}
                       </div>
@@ -308,7 +308,7 @@ export function PopupWidget() {
                       </h3>
                       <p className="text-gray-700 md:px-3">{Message}</p>
                       <button
-                        className="mt-6 text-red-600 focus:outline-none"
+                        className="mt-6 text-indigo-600 focus:outline-none"
                         onClick={() => reset()}
                       >
                         Go back
@@ -352,5 +352,5 @@ export function PopupWidget() {
         )}
       </Disclosure>
     </div>
-  );
+  )
 }

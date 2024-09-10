@@ -28,11 +28,11 @@ const FormComponent = () => {
   return (
     <>
        
-    <form onSubmit={handleSubmit} className="w-full max-w-2xl p-8 bg-white rounded-lg shadow-lg mx-4 md:mx-0 space-y-6">
-      <h1 className="text-3xl font-extrabold text-gray-800 mb-6 text-center">Scheme Recommendation Form</h1>
+    <form onSubmit={handleSubmit} className="w-full max-w-2xl  p-8 bg-white rounded-3xl shadow-lg mx-4 md:mx-0 space-y-6">
+      <h1 className="text-3xl font-extrabold text-gray-900 mb-6 text-center">Scheme Recommendation Form</h1>
       
       <div className="form-group">
-        <label htmlFor="age" className="block text-gray-700 font-semibold mb-2">Age</label>
+        <label htmlFor="age" className="block text-gray-800 font-bold mb-2">Age</label>
         <input
           type="number"
           id="age"
@@ -89,7 +89,7 @@ const FormComponent = () => {
 
       <button
         type="submit"
-        className="w-full bg-gradient-to-r from-red-500 to-red-500 text-white py-3 px-6 rounded-lg shadow-md hover:from-red-600 hover:to-red-600 transition duration-300"
+        className="w-full bg-gradient-to-r from-red-700 to-red-700 text-white py-3 px-6 rounded-lg shadow-md hover:from-red-800 hover:to-red-800 transition duration-300"
       >
         Submit
       </button>
@@ -103,7 +103,7 @@ const FormComponent = () => {
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <div className="mt-4 text-center text-red-600 font-semibold">
+        <div className="mt-4 text-center  text-red-600 font-semibold">
            Yayy Form submitted successfully!
         </div>
       </Transition>

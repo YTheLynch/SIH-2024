@@ -71,7 +71,7 @@ export const Navbar = ({hideSearch}) => {
                 <>
 
                     <Link
-                      href="/"
+                      href="//scheme_recommendation"
                       className="w-full px-4 py-2 -ml-4 text-red-500 rounded-md dark::text-red-300 hover:text-red-500 focus:text-red-500 focus:bg-indigo-100 dark::focus:bg-red-800 focus:outline-none"
                     >
                       Products
@@ -113,7 +113,7 @@ export const Navbar = ({hideSearch}) => {
             
               <li className="mr-3 nav__item" >
                 <Link
-                  href="/"
+                  href="/scheme_recommendation"
                   className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark::text-gray-200 hover:text-red-500 focus:text-red-500 focus:bg-red-100 focus:outline-none dark::focus:bg-gray-800"
                 >
                   Products
@@ -157,7 +157,7 @@ export const Navbar = ({hideSearch}) => {
             className="rounded-md px-10"
             onClick={() => router.push("/search")}
           >
-            <p>Search Scheme and more...</p>
+            <p>Search schemes and more...</p>
           </div>
         </div>
       </div>) : (null)}

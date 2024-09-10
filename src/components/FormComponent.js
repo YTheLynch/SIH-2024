@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Transition } from '@headlessui/react';
 
+
 const FormComponent = () => {
   const [formData, setFormData] = useState({
     age: '',
@@ -25,6 +26,8 @@ const FormComponent = () => {
   };
 
   return (
+    <>
+       
     <form onSubmit={handleSubmit} className="w-full max-w-2xl p-8 bg-white rounded-lg shadow-lg mx-4 md:mx-0 space-y-6">
       <h1 className="text-3xl font-extrabold text-gray-800 mb-6 text-center">Scheme Recommendation Form</h1>
       
@@ -105,6 +108,7 @@ const FormComponent = () => {
         </div>
       </Transition>
     </form>
+    </>
   );
 };
 

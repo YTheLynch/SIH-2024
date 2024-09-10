@@ -2,9 +2,9 @@ import React from 'react'
 
 const SearchItem = (props) => {
   return (
-    <div className={`bg-white rounded-lg min-h-18 p-2 border border-solid shadow-md border-gray-500 ${props?.className}`}>
-        <p className='mb-5'>{props?.name}</p>
-        <p className='text-[0.7rem]'>{props?.organization}</p>
+    <div className={`bg-white text-black rounded-md min-h-8 hover:text-red-700 hover:scale-105 hover:transition-scale  p-8 text-bold border border-solid shadow-md border-gray-900 ${props?.className}`}>
+        <p className='mb-5 text-[1.rem]'>{props?.name}</p>
+        <p className='text-[1rem]'>{props?.organization}</p>
     </div>
   )
 }

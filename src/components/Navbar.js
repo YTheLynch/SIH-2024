@@ -11,7 +11,7 @@ export const Navbar = ({hideSearch}) => {
 
   return (
     <div className="w-full">
-      <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-1">
+      <nav className="container relative flex flex-wrap items-center justify-between p-2 mx-auto lg:justify-between xl:px-1">
         {/* Logo */}
         <Link href="/">
           <span className="flex items-center space-x-2 text-2xl font-medium  text-red-500 dark::text-red-100">
@@ -152,7 +152,7 @@ export const Navbar = ({hideSearch}) => {
       </nav>
 
       {!hideSearch ? (<div className="flex justify-center">
-        <div className="border border-solid border-red-500 px-5 py-2 rounded-lg">
+        <div className="border border-solid border-gray-400 hover:border-red-500 px-8 py-2  m-3 rounded-lg">
           <div
             className="rounded-md px-10"
             onClick={() => router.push("/search")}

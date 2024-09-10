@@ -4,6 +4,7 @@
 
 import React from 'react';
 import BlogPostCard from '@/components/BlogPostCard';
+import { Navbar } from '@/components/Navbar';
 
 const BlogPage = () => {
   const blogPosts = [
@@ -154,7 +155,9 @@ const BlogPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-red-100 via-red-200 to-red-50 p-100">
+    <>
+<Navbar />
+<div className="min-h-screen bg-gradient-to-r from-red-50 via-red-100 to-red-50 p-10">
       <div className="container mx-auto max-w-5xl">
         <h1 className="text-5xl font-extrabold text-gray-700 mb-8 text-center">Government Schemes</h1>
         <p className="text-lg text-gray-700 mb-12 text-center">
@@ -168,6 +171,8 @@ const BlogPage = () => {
         </div>
       </div>
     </div>
+    </>
+    
   );
 };
 

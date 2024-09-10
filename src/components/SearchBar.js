@@ -4,12 +4,11 @@ const SearchBar = ({handleChange}) => {
 
   return (
     <div className="flex justify-center">
-        <div className="border border-solid border-red-500 px-5 py-2 rounded-lg">
           <div className="rounded-md px-10">
-            <input type="text" placeholder='Search schemes and more...' onChange={handleChange} />
+            <input  className="border border-solid border-gray-400 hover:border-red-500 px-10 py-2 rounded-lg placeholder:text-red-500 " type="text" placeholder='Search schemes and more...' onChange={handleChange} />
           </div>
         </div>
-      </div>
+      
   )
 }
 

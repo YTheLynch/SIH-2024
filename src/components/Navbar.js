@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Disclosure } from "@headlessui/react"
 import { useRouter } from "next/navigation"
 
-export const Navbar = () => {
+export const Navbar = ({hideSearch}) => {
   const navigation = ["Product", "Features", "Rewards", "Blog"]
   const router = useRouter()
 
@@ -77,10 +77,10 @@ export const Navbar = () => {
                       Products
                     </Link>
                     <Link
-                      href="/"
+                      href="/blogs"
                       className="w-full px-4 py-2 -ml-4 text-red-500 rounded-md dark::text-red-300 hover:text-red-500 focus:text-red-500 focus:bg-indigo-100 dark::focus:bg-red-800 focus:outline-none"
                     >
-                      Features
+                      Blog
                     </Link>
                     <Link
                       href= "/rewards"
@@ -122,10 +122,10 @@ export const Navbar = () => {
 
               <li className="mr-3 nav__item">
                 <Link
-                  href="/"
+                  href="/blog"
                   className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark::text-gray-200 hover:text-red-500 focus:text-red-500 focus:bg-red-100 focus:outline-none dark::focus:bg-gray-800"
                 >
-                  Features
+                  Blogs
                 </Link>
               </li>
 
@@ -151,7 +151,7 @@ export const Navbar = () => {
         </div>
       </nav>
 
-      <div className="flex justify-center">
+      {!hideSearch ? (<div className="flex justify-center">
         <div className="border border-solid border-red-500 px-5 py-2 rounded-lg">
           <div
             className="rounded-md px-10"
@@ -160,7 +160,7 @@ export const Navbar = () => {
             <p>Search Scheme and more...</p>
           </div>
         </div>
-      </div>
+      </div>) : (null)}
     </div>
   )
 }

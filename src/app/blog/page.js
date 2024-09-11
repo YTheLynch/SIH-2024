@@ -1,4 +1,3 @@
-// Blog >> page.js
 
 'use client';
 
@@ -157,7 +156,7 @@ const BlogPage = () => {
   return (
     <>
 <Navbar />
-<div className="min-h-screen bg-gradient-to-r from-red-50 via-red-100 to-red-50 p-10">
+<div className="min-h-screen rounded-md bg-gradient-to-r from-red-50 via-red-100 to-red-50 p-10">
       <div className="container mx-auto max-w-5xl">
         <h1 className="text-5xl font-extrabold text-gray-700 mb-8 text-center">Government Schemes</h1>
         <p className="text-lg text-gray-700 mb-12 text-center">

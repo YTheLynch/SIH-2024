@@ -1,36 +1,39 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import React, { useEffect } from "react"
-import { useRouter } from "next/navigation"
+import Link from "next/link";
+import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
-  const router = useRouter()
+  const router = useRouter();
   const [user, setUser] = React.useState({
     email: "",
-    password: ""
-  })
+    password: "",
+  });
 
-  const [buttonDisabled, setButtonDisabled] = React.useState(true)
-  const [loading, setLoading] = React.useState(false)
+  const [buttonDisabled, setButtonDisabled] = React.useState(true);
+  const [loading, setLoading] = React.useState(false);
 
   const onLogin = () => {
-    router.push("/home")
-  }
+    router.push("/home");
+  };
 
   useEffect(() => {
     if (user.email.length > 0 && user.password.length > 0) {
-      setButtonDisabled(false)
+      setButtonDisabled(false);
     } else {
-      setButtonDisabled(true)
+      setButtonDisabled(true);
     }
-  }, [user])
+  }, [user]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-white">
+    <div
+      className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center"
+      style={{ backgroundImage: "url('/img/signin_image.jpg')" }} // Adjust the path to your image
+    >
       {/* Form Wrapper */}
       <div className="bg-red-600 p-8 rounded-3xl shadow-md w-full max-w-md">
-        <h1 className="text-4xl font-bold text-center text-white- mb-6">
+        <h1 className="text-4xl font-bold text-center text-white mb-6">
           {loading ? "We're logging you in..." : "Sign In"}
         </h1>
 
@@ -40,7 +43,7 @@ export default function LoginPage() {
           id="email"
           type="email"
           value={user.email}
-          onChange={e => setUser({ ...user, email: e.target.value })}
+          onChange={(e) => setUser({ ...user, email: e.target.value })}
           placeholder="Enter Your Email..."
         />
 
@@ -50,7 +53,7 @@ export default function LoginPage() {
           id="password"
           type="password"
           value={user.password}
-          onChange={e => setUser({ ...user, password: e.target.value })}
+          onChange={(e) => setUser({ ...user, password: e.target.value })}
           placeholder="Enter Your Password..."
         />
 
@@ -85,5 +88,5 @@ export default function LoginPage() {
         <p className="mt-8 rounded-full text-xl text-red-700">Go Back</p>
       </Link>
     </div>
-  )
+  );
 }

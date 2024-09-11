@@ -2,7 +2,7 @@ import React from 'react';
 
 const BlogPostCard = ({ post }) => {
   return (
-    <div className="bg-white shadow-xl rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+    <div className="bg-white shadow-xl rounded-md overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
       <img src={post.imageUrl} alt={post.title} className="w-full h-40 object-cover" />
       <div className="p-6">
         <div className="text-sm text-blue-500 mb-2">{post.category}</div>

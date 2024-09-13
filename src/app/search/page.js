@@ -4,16 +4,17 @@ import { Navbar } from '@/components/Navbar'
 import SearchItem from '@/components/SearchItem'
 import { schemes } from '@/store/schemes'
 import SearchBar from '@/components/SearchBar'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 
 const Page = () => {
   const [searchq, setSearchq] = useState('');
 
-
   const handleChange = (e) => {
       setSearchq(e.target.value)
   }
+
+
 
    const genResults = () => {
     return searchq === '' ? (
@@ -31,7 +32,7 @@ const Page = () => {
     <>
     
     <Navbar hideSearch = {true}/>
-    <SearchBar handleChange = {handleChange}/>
+    <SearchBar handleChange = {handleChange} />
 
     <div id="box" className="ml-20 pr-20 min-h-[70vh]">
       {genResults()}  

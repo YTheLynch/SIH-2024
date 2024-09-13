@@ -46,9 +46,9 @@ const SchemeRecommendationPage = () => {
   return (
     <>
       <Navbar />
-      <div className="flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('/img/recomm_image.jpg')" }}>
+      <div className="flex items-center justify-center min-h-screen bg-cover bg-center" >
         <form onSubmit={handleSubmit} className="w-full max-w-2xl p-8 bg-white bg-opacity-80 rounded-lg shadow-lg mx-4 md:mx-0 space-y-6">
-          <h1 className="text-3xl font-extrabold text-gray-800 mb-6 text-center">Scheme Recommendation Form</h1>
+          <h1 className="text-3xl font-extrabold text-gray-800 mb-6 text-center">Scheme Recommendation</h1>
           
           <div className="form-group">
             <label htmlFor="age" className="block text-gray-700 font-semibold mb-2">Age</label>

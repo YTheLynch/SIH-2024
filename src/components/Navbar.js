@@ -11,7 +11,8 @@ export const Navbar = ({hideSearch}) => {
 
   return (
     <div className="w-full">
-      <nav className="container relative flex flex-wrap items-center justify-between p-2  mx-auto lg:justify-between xl:pl-8">
+      <nav className="container relative flex flex-wrap items-center justify-between p-2  mx-auto lg:justify-between xl:pl-8
+      `">
         {/* Logo */}
         <Link href="/">
           <span className="flex items-center space-x-2 text-2xl font-medium  text-red-500 dark::text-red-100">
@@ -74,7 +75,7 @@ export const Navbar = ({hideSearch}) => {
                       href="//scheme_recommendation"
                       className="w-full px-4 py-2 -ml-4 text-red-500 rounded-md dark::text-red-300 hover:text-red-500 focus:text-red-500 focus:bg-indigo-100 dark::focus:bg-red-800 focus:outline-none"
                     >
-                      Products
+                      Recommendation
                     </Link>
                     <Link
                       href="/blogs"
@@ -116,7 +117,7 @@ export const Navbar = ({hideSearch}) => {
                   href="/scheme_recommendation"
                   className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark::text-gray-200 hover:text-red-500 focus:text-red-500 focus:bg-red-100 focus:outline-none dark::focus:bg-gray-800"
                 >
-                  Products
+                  Recommendation
                 </Link>
               </li>
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SearchBar = ({handleChange}) => {
+const SearchBar = ({handleChange, ref}) => {
 
   return (
     <div className="flex justify-center">

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Maps Schemes</title>
+  <style>
+    #map {
+      height: 500px;
+      width: 100%;
+    }
+    #info-box {
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1 >Google Maps Schemes</h1>
+  <h2><a href="http://localhost:3000/home">Go Back</a></h2>
+  <div id="map"></div>
+  <div id="info-box"></div>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqoyzq6SHBofuAJE4iOfsTUGFCFuMwA7Y&callback=initMap"></script>
+
+<script>
+    // Initialize the Google Map
+    function initMap() {
+      const map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 20.5937, lng: 78.9629 }, // Center of India
+        zoom: 5
+      });
+
+      // Example regions with their approximate LatLngBounds
+      const regions = [
+        { name: 'Punjab', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(29.5, 73.0), new google.maps.LatLng(32.5, 76.5)) },
+        { name: 'Maharashtra', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(15.0, 72.0), new google.maps.LatLng(22.0, 81.0)) },
+        { name: 'Uttar Pradesh', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(23.5, 77.0), new google.maps.LatLng(29.5, 84.0)) },
+        { name: 'Tamil Nadu', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(8.0, 76.0), new google.maps.LatLng(13.5, 80.5)) },
+        { name: 'Gujarat', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(20.0, 68.0), new google.maps.LatLng(24.5, 74.0)) },
+        { name: 'Rajasthan', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(23.0, 69.0), new google.maps.LatLng(30.0, 78.0)) },
+        { name: 'West Bengal', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(21.5, 85.5), new google.maps.LatLng(27.0, 89.0)) },
+        { name: 'Bihar', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(24.5, 83.0), new google.maps.LatLng(27.5, 88.0)) },
+        { name: 'Odisha', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(19.0, 81.0), new google.maps.LatLng(23.0, 87.0)) },
+        { name: 'Assam', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(24.0, 89.5), new google.maps.LatLng(28.5, 96.0)) },
+        { name: 'Kerala', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(8.0, 74.5), new google.maps.LatLng(13.5, 78.5)) },
+        { name: 'Andhra Pradesh', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(13.5, 78.5), new google.maps.LatLng(19.0, 84.0)) },
+        { name: 'Telangana', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(15.5, 77.0), new google.maps.LatLng(19.5, 80.5)) },
+        { name: 'Haryana', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(27.5, 74.0), new google.maps.LatLng(31.5, 78.0)) },
+        { name: 'Jharkhand', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(22.0, 83.5), new google.maps.LatLng(25.0, 87.0)) },
+        { name: 'Chhattisgarh', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(19.5, 80.0), new google.maps.LatLng(24.0, 85.0)) },
+        { name: 'Himachal Pradesh', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(30.5, 75.0), new google.maps.LatLng(33.5, 79.0)) },
+        { name: 'Jammu and Kashmir', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(32.0, 74.0), new google.maps.LatLng(35.0, 80.0)) },
+        { name: 'North-East States (Nagaland, Manipur, Tripura, Mizoram)', bounds: new google.maps.LatLngBounds(new google.maps.LatLng(21.0, 90.0), new google.maps.LatLng(27.5, 97.0)) }
+      ];
+
+      // Add regions to the map
+      regions.forEach(region => {
+        const rectangle = new google.maps.Rectangle({
+          bounds: region.bounds,
+          fillOpacity: 0.1,
+          strokeWeight: 1,
+          clickable: true,
+          map: map
+        });
+
+        // Add event listener for mouseover
+        rectangle.addListener('mouseover', () => {
+          onRegionHover(region.name, 'Rabi'); // Example: use 'Rabi' season, you can modify this dynamically
+        });
+      });
+    }
+
+    // Fetch schemes from the server
+    function fetchSchemes(region, season) {
+      fetch(`/get-schemes?region=${region}&season=${season}`)
+        .then(response => response.json())
+        .then(data => {
+          showInfoBox(region, data.schemes);
+        })
+        .catch(error => {
+          console.error('Error fetching schemes:', error);
+        });
+    }
+
+    // Display schemes in the info box
+    function showInfoBox(region, schemes) {
+      const infoBox = document.getElementById('info-box');
+      infoBox.innerHTML = `<h2>${region} Schemes (${schemes.length})</h2><ul>`;
+      schemes.forEach(scheme => {
+        infoBox.innerHTML += `<li>${scheme}</li>`;
+      });
+      infoBox.innerHTML += `</ul>`;
+    }
+
+
+    // Handle region hover
+    function onRegionHover(region, season) {
+      fetchSchemes(region, season);
+    }
+  </script>
+
+  <!-- Load the Google Maps API -->
+</body>
+</html>

@@ -2,7 +2,7 @@ import { Inter } from "next/font/google"
 import { ThemeProvider } from "next-themes"
 import Script from "next/script"
 import "./globals.css"
-
+import SessionWrapper from "@/components/SessionWrapper"
 import { Footer } from "@/components/Footer"
 import { PopupWidget } from "@/components/PopupWidget"
 
@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
+        <SessionWrapper>
         <ThemeProvider attribute="class">
           <div>{children}</div>
           <Footer />
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
           <Script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"/>
           <Script src = "https://mediafiles.botpress.cloud/88aee58d-ce21-4237-b67a-f9a81c973905/webchat/v2.1/config.js"/>
         </ThemeProvider>
+        </SessionWrapper>
       </body>
     </html>
   )

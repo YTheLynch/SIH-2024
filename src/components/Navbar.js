@@ -4,7 +4,7 @@ import ThemeChanger from "./DarkSwitch"
 import Image from "next/image"
 import { Disclosure } from "@headlessui/react"
 import { useRouter } from "next/navigation"
-
+import { useSession,signIn,signOut } from "next-auth/react"
 export const Navbar = ({hideSearch}) => {
   const navigation = ["Product", "Features", "Rewards", "Blog"]
   const router = useRouter()
